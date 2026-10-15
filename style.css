@@ -1,0 +1,381 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+/* Light mode colors (default). */
+:root {
+  --background: #f7f5f2;
+  --surface: #ffffff;
+  --text: #242424;
+  --muted: #666666;
+  --accent: #7057c8;
+  --accent-dark: #5540a6;
+  --button-text: #ffffff;
+  --footer-bg: #242033;
+  --footer-text: #dedbe8;
+  --shadow: rgb(0 0 0 / 8%);
+  --shadow-soft: rgb(0 0 0 / 6%);
+  --shadow-strong: rgb(0 0 0 / 12%);
+}
+
+/* Dark mode colors */
+:root[data-theme="dark"] {
+  --background: #14121c;
+  --surface: #1f1c2b;
+  --text: #ece9f5;
+  --muted: #a9a5b8;
+  --accent: #a590f5;
+  --accent-dark: #c0b1f8;
+  --button-text: #1a1530;
+  --footer-bg: #0d0b14;
+  --footer-text: #bdb9cc;
+  --shadow: rgb(0 0 0 / 40%);
+  --shadow-soft: rgb(0 0 0 / 35%);
+  --shadow-strong: rgb(0 0 0 / 55%);
+}
+
+/* font at kulay ng buong page. */
+body {
+  background: var(--background);
+  color: var(--text);
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Header at navigation layout. */
+.site-header {
+  background: var(--surface);
+  box-shadow: 0 2px 12px var(--shadow);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  transition: background 0.3s ease;
+}
+
+.navbar {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  max-width: 1100px;
+  padding: 1rem 1.5rem;
+}
+
+.brand {
+  color: var(--accent);
+  font-size: 1.4rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+}
+
+.nav-links a,
+.contact-links a {
+  color: var(--text);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.nav-links a:hover,
+.contact-links a:hover {
+  color: var(--accent);
+}
+
+/* Theme icon at hamburger icon. */
+.nav-actions {
+  align-items: center;
+  display: flex;
+  gap: 0.75rem;
+}
+
+.theme-toggle {
+  background: none;
+  border: 0;
+  color: var(--text);
+  cursor: pointer;
+  font-size: 1.5rem;
+  line-height: 1;
+  padding: 0.25rem;
+  transition: transform 0.2s ease;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.2);
+}
+
+.theme-toggle:focus-visible {
+  border-radius: 6px;
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.theme-toggle svg {
+  display: block;
+  fill: none;
+  height: 24px;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2;
+  width: 24px;
+}
+
+.menu-toggle {
+  background: none;
+  border: 0;
+  color: var(--text);
+  cursor: pointer;
+  display: none;
+  font-size: 1.7rem;
+}
+
+/* Highlight ng nav link  */
+.nav-links a.active {
+  color: var(--accent);
+  font-weight: bold;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 6px;
+}
+
+/* Para hindi matakpan ng sticky header ang heading kapag nag-click ng link. */
+section[id],
+footer[id] {
+  scroll-margin-top: 70px;
+}
+
+/* Hero section*/
+.hero {
+  align-items: center;
+  display: flex;
+  gap: 3rem;
+  justify-content: space-between;
+  margin: 0 auto;
+  max-width: 1100px;
+  min-height: 470px;
+  padding: 4rem 1.5rem;
+}
+
+.hero-text {
+  max-width: 600px;
+}
+
+.eyebrow {
+  color: var(--accent);
+  font-weight: bold;
+}
+
+.hero h1 {
+  font-size: clamp(2.8rem, 7vw, 4.5rem);
+  line-height: 1.1;
+}
+
+.hero-summary {
+  color: var(--muted);
+  margin: 1rem 0 1.5rem;
+}
+
+.profile-photo {
+  border: 6px solid var(--surface);
+  border-radius: 50%;
+  height: 280px;
+  object-fit: cover;
+  width: 280px;
+}
+
+.button {
+  background: var(--accent);
+  border-radius: 8px;
+  color: var(--button-text);
+  display: inline-block;
+  padding: 0.75rem 1rem;
+  text-decoration: none;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.button:hover {
+  background: var(--accent-dark);
+  transform: translateY(-2px);
+}
+
+/* spacing sa About at Projects sections. */
+.section-block {
+  margin: 0 auto;
+  max-width: 1100px;
+  padding: 3rem 1.5rem;
+}
+
+.section-block h2,
+.site-footer h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.about p {
+  color: var(--muted);
+  max-width: 750px;
+}
+
+/* Grid layout para sa project cards. */
+.project-grid {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.project-card {
+  background: var(--surface);
+  border-radius: 12px;
+  box-shadow: 0 5px 18px var(--shadow-soft);
+  padding: 1.5rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.3s ease;
+}
+
+.project-card:hover {
+  box-shadow: 0 9px 24px var(--shadow-strong);
+  transform: translateY(-4px);
+}
+
+.project-card p {
+  color: var(--muted);
+  margin: 0.6rem 0 1rem;
+}
+
+.project-tag {
+  color: var(--accent);
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+/* Education, Languages, Tools, Design, Interests cards sa About. */
+.info-grid {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 2rem;
+}
+
+.info-card {
+  background: var(--surface);
+  border-radius: 12px;
+  box-shadow: 0 5px 18px var(--shadow-soft);
+  padding: 1.5rem;
+  transition: background 0.3s ease;
+}
+
+.info-card:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+}
+
+.info-card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.75rem;
+}
+
+.about .info-card p {
+  max-width: none;
+}
+
+.info-title {
+  color: var(--text);
+  font-weight: bold;
+}
+
+.info-meta {
+  font-size: 0.9rem;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.chip {
+  background: rgb(112 87 200 / 14%);
+  border-radius: 999px;
+  color: var(--accent);
+  font-size: 0.9rem;
+  font-weight: bold;
+  padding: 0.25rem 0.8rem;
+}
+
+/* Footer contact area. */
+.site-footer {
+  background: var(--footer-bg);
+  color: white;
+  padding: 3rem 1.5rem 1.5rem;
+  text-align: center;
+  transition: background 0.3s ease;
+}
+
+.site-footer p {
+  color: var(--footer-text);
+}
+
+.contact-links {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  margin: 1rem 0 2rem;
+}
+
+.contact-links a {
+  color: white;
+}
+
+.copyright {
+  font-size: 0.9rem;
+}
+
+/* mob screen */
+@media (max-width: 700px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    background: var(--surface);
+    display: none;
+    flex-direction: column;
+    gap: 0;
+    left: 0;
+    padding: 0.5rem 1.5rem 1rem;
+    position: absolute;
+    right: 0;
+    top: 100%;
+  }
+
+  .nav-links.is-open {
+    display: flex;
+  }
+
+  .nav-links a {
+    display: block;
+    padding: 0.65rem 0;
+  }
+
+  .hero {
+    flex-direction: column-reverse;
+    gap: 1.5rem;
+    text-align: center;
+  }
+
+  .profile-photo {
+    height: 210px;
+    width: 210px;
+  }
+
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+}

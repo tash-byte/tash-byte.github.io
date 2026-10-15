@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+
+  <!-- adjust page sa mobile screen. -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Athacia Lorraine Villanueva | Personal Portfolio</title>
+
+  <!-- Kinukuha ang styles mula sa hiwalay na CSS file. -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header at navigation  -->
+  <header class="site-header">
+    <nav class="navbar" aria-label="Main navigation">
+      <a class="brand" href="#home">My Portfolio</a>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="theme-toggle" id="theme-toggle" type="button"
+          aria-label="Switch to dark mode"></button>
+
+        <button class="menu-toggle" id="menu-toggle" type="button"
+          aria-label="Open navigation menu" aria-expanded="false">☰</button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero section . -->
+    <section class="hero" id="home" aria-labelledby="hero-title">
+      <div class="hero-text">
+        <p class="eyebrow">Hello, I'm</p>
+        <h1 id="hero-title">Athacia Lorraine Villanueva</h1>
+        <p class="hero-summary">
+          A college student learning web development and UI/UX 
+          design, building useful, thoughtful digital experiences.
+        </p>
+        <a class="button" href="#projects">View my projects</a>
+      </div>
+
+      <img
+        class="profile-photo"
+        src="images/profile.PNG"
+        alt="Profile photo"
+      >
+    </section>
+
+    <!-- About section -->
+    <section class="about section-block" id="about" aria-labelledby="about-title">
+      <h2 id="about-title">About Me</h2>
+      <p>
+        I'm a Bachelor of Science in Information Technology student majoring 
+        in Web and Mobile Application Development at Bulacan State University who 
+        is interested in technology and creative problem-solving. I'm currently learning HTML,
+        CSS, and JavaScript. I enjoy turning ideas into simple, accessible
+        websites and improving my skills through practice.
+      </p>
+
+      <div class="info-grid">
+  <article class="info-card">
+    <h3>Education</h3>
+    <p class="info-title">Bulacan State University</p>
+    <p>Bachelor of Science in Information Technology</p>
+    <p class="info-meta">Major in Web and Mobile Application Development</p>
+    <p class="info-meta">2023 – Present</p>
+  </article>
+
+  <article class="info-card">
+    <h3>Languages &amp; Frameworks</h3>
+    <div class="chips">
+      <span class="chip">HTML</span>
+      <span class="chip">CSS</span>
+      <span class="chip">JavaScript</span>
+      <span class="chip">React</span>
+      <span class="chip">C#</span>
+      <span class="chip">Dart</span>
+      <span class="chip">Flutter</span>
+      <span class="chip">Python</span>
+    </div>
+  </article>
+
+  <article class="info-card">
+    <h3>Tools</h3>
+    <div class="chips">
+      <span class="chip">VS Code</span>
+      <span class="chip">PyCharm</span>
+      <span class="chip">Git &amp; GitHub</span>
+      <span class="chip">Android Studio</span>
+    </div>
+  </article>
+
+  <article class="info-card">
+    <h3>Design</h3>
+    <div class="chips">
+      <span class="chip">UI/UX Design</span>
+      <span class="chip">Figma</span>
+    </div>
+  </article>
+
+  <article class="info-card">
+    <h3>Interests</h3>
+    <div class="chips">
+      <span class="chip">Web Design</span>
+      <span class="chip">Technology</span>
+      <span class="chip">Problem-Solving</span>
+    </div>
+  </article>
+</div>
+    </section>
+
+    <!-- project card-->
+    <section class="projects section-block" id="projects" aria-labelledby="projects-title">
+      <h2 id="projects-title">My Projects</h2>
+
+      <div class="project-grid">
+        <article class="project-card">
+          <h3>Student Planner</h3>
+          <p>
+            A sample planner website concept for keeping track of assignments,
+            deadlines, and study goals.
+          </p>
+          <span class="project-tag">HTML · CSS</span>
+        </article>
+
+        <article class="project-card">
+          <h3>Recipe Finder</h3>
+          <p>
+            A sample page concept that organizes recipes by category and
+            makes them easy to browse.
+          </p>
+          <span class="project-tag">HTML · CSS · JavaScript</span>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <!-- Contact details at links sa footer. -->
+  <footer class="site-footer" id="contact">
+    <h2>Get in Touch</h2>
+    <p>Have a question or want to connect? Reach out here:</p>
+    <div class="contact-links">
+      <a href="mailto:2023107563@ms.bulsu.edu.ph.com">Email</a>
+      <a href="https://github.com/tash-byte" target="_blank"
+        rel="noopener noreferrer">GitHub</a>
+    </div>
+    <p class="copyright">&copy; 2026 Athacia Lorraine Villanueva. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
